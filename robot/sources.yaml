@@ -12,7 +12,12 @@ api_json:
     campos:
       id: "edicao"
       titulo: "descricao"
-       "nr_empenho"
+      data: "data"
+
+  - nome: "TCE-SP (Despesas)"
+    url: "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/{mes}"
+    campos:
+      id: "nr_empenho"
       titulo: "nm_fornecedor"
       data: "dt_emissao_despesa"
       valor: "vl_despesa"
