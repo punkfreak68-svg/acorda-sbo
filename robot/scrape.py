@@ -1,6 +1,8 @@
 import json, hashlib, os, time
 from datetime import datetime, timedelta, timezone
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 import yaml
 
@@ -28,13 +30,38 @@ def save_json(path, data):
 def sha(s):
     return hashlib.sha256(str(s).encode("utf-8")).hexdigest()[:16]
 
+def criar_sessao():
+    """Sessão HTTP com retry automático para erros de servidor (502/503/504) e timeout."""
+    sessao = requests.Session()
+    retry = Retry(
+        total=3,
+        backoff_factor=2,  # espera 2s, 4s, 8s entre tentativas
+        status_forcelist=[502, 503, 504],
+        allowed_methods=["GET"]
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    sessao.mount("https://", adapter)
+    sessao.mount("http://", adapter)
+    return sessao
+
+SESSAO = criar_sessao()
+
 def aplicar_placeholders(url, extra=None):
-    """Troca {ano}, {mes}, {hoje}, {ha30dias} e chaves extras na URL."""
+    """Troca {ano}, {mes}, {mesAnterior}, {anoMesAnterior}, {hoje}, {ha30dias} e chaves extras na URL."""
     hoje = agora()
     ha30 = hoje - timedelta(days=30)
+
+    mes_anterior = hoje.month - 1
+    ano_mes_anterior = hoje.year
+    if mes_anterior == 0:
+        mes_anterior = 12
+        ano_mes_anterior -= 1
+
     subs = {
         "{ano}": str(hoje.year),
         "{mes}": str(hoje.month),
+        "{mesAnterior}": str(mes_anterior),
+        "{anoMesAnterior}": str(ano_mes_anterior),
         "{hoje}": hoje.strftime("%Y%m%d"),
         "{ha30dias}": ha30.strftime("%Y%m%d"),
     }
@@ -56,13 +83,30 @@ def get_field(obj, path, default=""):
     return cur
 
 def extract_list(payload):
+    """Tenta achar a lista de registros dentro de formatos comuns de API."""
     if isinstance(payload, list):
         return payload
     if isinstance(payload, dict):
-        for key in ["data", "itens", "registros", "results", "content", "despesas", "receitas"]:
+        chaves_possiveis = [
+            "data", "itens", "registros", "results", "content",
+            "despesas", "receitas", "resultado", "resultados",
+            "lista", "edicoes", "docs", "items"
+        ]
+        for key in chaves_possiveis:
             if key in payload and isinstance(payload[key], list):
                 return payload[key]
     return []
+
+def debug_estrutura(payload, nome):
+    """Imprime a estrutura da resposta quando não encontramos registros — ajuda a corrigir o mapeamento."""
+    if isinstance(payload, dict):
+        print(f"     [DEBUG {nome}] Resposta é um objeto (dict) com chaves: {list(payload.keys())[:15]}")
+        amostra = json.dumps(payload, ensure_ascii=False)[:400]
+        print(f"     [DEBUG {nome}] Amostra: {amostra}")
+    elif isinstance(payload, list):
+        print(f"     [DEBUG {nome}] Resposta é uma lista com {len(payload)} itens (mas veio vazia ou não reconhecida)")
+    else:
+        print(f"     [DEBUG {nome}] Tipo inesperado: {type(payload)}")
 
 def montar_itens(registros, campos, nome_fonte, url_base):
     itens = []
@@ -99,15 +143,15 @@ def fetch_api_json(fonte):
     nome = fonte.get("nome", "sem nome")
     campos = fonte.get("campos", {})
     url_template = fonte["url"]
-    variacoes = fonte.get("variacoes", [None])  # ex.: modalidades do PNCP
+    variacoes = fonte.get("variacoes", [None])
 
     todos = []
     for var in variacoes:
         extra = {"{variacao}": var} if var is not None else None
         url = aplicar_placeholders(url_template, extra)
         try:
-            r = requests.get(url, timeout=40, headers={
-                "User-Agent": "acorda-sbo/1.0",
+            r = SESSAO.get(url, timeout=(10, 50), headers={
+                "User-Agent": "Mozilla/5.0 (compatible; acorda-sbo/1.0; +cidadania)",
                 "Accept": "application/json"
             })
             if r.status_code == 204:
@@ -122,10 +166,15 @@ def fetch_api_json(fonte):
 
         registros = extract_list(payload)
         print(f"[OK] {nome} (var={var}): {len(registros)} registros brutos")
-        if registros and len(todos) == 0:
-            print(f"     Exemplo de chaves disponíveis: {list(registros[0].keys())[:12]}")
+
+        if registros:
+            if len(todos) == 0:
+                print(f"     Exemplo de chaves disponíveis: {list(registros[0].keys())[:12]}")
+        else:
+            debug_estrutura(payload, nome)
+
         todos.extend(montar_itens(registros, campos, nome, url))
-        time.sleep(1)
+        time.sleep(1.5)
 
     return todos
 
@@ -135,7 +184,7 @@ def fetch_html_list(fonte):
     selector = fonte["selector"]
     base = fonte.get("base", "")
     try:
-        r = requests.get(url, timeout=40, headers={"User-Agent": "acorda-sbo/1.0"})
+        r = SESSAO.get(url, timeout=(10, 50), headers={"User-Agent": "Mozilla/5.0 (compatible; acorda-sbo/1.0)"})
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
     except Exception as e:
