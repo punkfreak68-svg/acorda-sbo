@@ -1,6 +1,4 @@
 api_json:
-  # PNCP exige data inicial/final e modalidade obrigatoriamente.
-  # As "variacoes" são os códigos de modalidade que o robô vai percorrer.
   - nome: "PNCP (Licitações)"
     url: "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial={ha30dias}&dataFinal={hoje}&codigoModalidadeContratacao={variacao}&codigoMunicipioIbge=3545803&pagina=1&tamanhoPagina=50"
     variacoes: [6, 8, 9, 4]
@@ -23,7 +21,12 @@ api_json:
     campos:
       id: "edicao"
       titulo: "descricao"
-       "nr_empenho"
+      data: "data"
+
+  - nome: "TCE-SP (Despesas)"
+    url: "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/{ano}/{mes}"
+    campos:
+      id: "nr_empenho"
       titulo: "nm_fornecedor"
       data: "dt_emissao_despesa"
       valor: "vl_despesa"
