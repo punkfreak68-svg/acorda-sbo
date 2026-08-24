@@ -1,26 +1,42 @@
 name: robot-diario
+
 on:
   schedule:
     - cron: "17 10 * * *"
   workflow_dispatch: {}
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   coletar-e-publicar:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Baixar repositório
+        uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - uses: actions/setup-python@v5
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Instalar deps
+
+      - name: Instalar dependências
         run: pip install -r requirements.txt
+
       - name: Rodar robô
         run: python robot/scrape.py
+
       - name: Commit de mudanças
         run: |
           git config user.name "acorda-sbo-bot"
@@ -28,9 +44,20 @@ jobs:
           git add data/novidades.json
           git diff --cached --quiet || git commit -m "chore(robot): atualiza novidades $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
           git push
+
       - name: Build estático
         run: |
-          mkdir _site
+          mkdir -p _site
           cp -r assets data *.html _site/
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
       - name: Deploy para Pages
+        id: deployment
         uses: actions/deploy-pages@v4
