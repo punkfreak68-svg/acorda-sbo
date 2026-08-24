@@ -9,8 +9,11 @@ NOV = os.path.join(ROOT, "data", "novidades.json")
 SRC = os.path.join(os.path.dirname(__file__), "sources.yaml")
 TZ = timezone(timedelta(hours=-3))
 
+def agora():
+    return datetime.now(TZ)
+
 def now_str():
-    return datetime.now(TZ).strftime("%Y-%m-%d %H:%M")
+    return agora().strftime("%Y-%m-%d %H:%M")
 
 def load_json(path, default):
     if os.path.exists(path):
@@ -24,6 +27,22 @@ def save_json(path, data):
 
 def sha(s):
     return hashlib.sha256(str(s).encode("utf-8")).hexdigest()[:16]
+
+def aplicar_placeholders(url, extra=None):
+    """Troca {ano}, {mes}, {hoje}, {ha30dias} e chaves extras na URL."""
+    hoje = agora()
+    ha30 = hoje - timedelta(days=30)
+    subs = {
+        "{ano}": str(hoje.year),
+        "{mes}": str(hoje.month),
+        "{hoje}": hoje.strftime("%Y%m%d"),
+        "{ha30dias}": ha30.strftime("%Y%m%d"),
+    }
+    if extra:
+        subs.update(extra)
+    for k, v in subs.items():
+        url = url.replace(k, str(v))
+    return url
 
 def get_field(obj, path, default=""):
     if not path:
@@ -40,72 +59,111 @@ def extract_list(payload):
     if isinstance(payload, list):
         return payload
     if isinstance(payload, dict):
-        for key in ["data", "itens", "registros", "results", "content"]:
+        for key in ["data", "itens", "registros", "results", "content", "despesas", "receitas"]:
             if key in payload and isinstance(payload[key], list):
                 return payload[key]
     return []
 
-def fetch_api_json(fonte):
-    url = fonte["url"]
-    if "{mes}" in url:
-        mes_atual = datetime.now(TZ).month
-        url = url.replace("{mes}", str(mes_atual))
-
-    try:
-        r = requests.get(url, timeout=30, headers={"User-Agent": "acorda-sbo/1.0"})
-        r.raise_for_status()
-        payload = r.json()
-    except Exception as e:
-        print(f"[API-JSON] Falha em {fonte.get('nome')}: {e}")
-        return []
-
-    registros = extract_list(payload)
-    campos = fonte.get("campos", {})
+def montar_itens(registros, campos, nome_fonte, url_base):
     itens = []
     for reg in registros:
-        titulo = get_field(reg, campos.get("titulo"), "Sem título")
+        if not isinstance(reg, dict):
+            continue
+        titulo = str(get_field(reg, campos.get("titulo"), "")).strip()
+        if not titulo or titulo.lower() in ("item", "sem título", "none"):
+            continue
         data_pub = get_field(reg, campos.get("data"), "")
-        link = get_field(reg, campos.get("link"), url)
+        link = get_field(reg, campos.get("link"), "") or url_base
         valor = get_field(reg, campos.get("valor"), "")
         id_raw = get_field(reg, campos.get("id"), titulo)
 
-        resumo = f"Valor: {valor}" if valor else ""
+        resumo = ""
+        if valor not in ("", None):
+            try:
+                resumo = f"{float(valor):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+                resumo = "Valor: R$ " + resumo
+            except Exception:
+                resumo = f"Valor: {valor}"
+
         itens.append({
-            "id": sha(f"{fonte.get('nome')}-{id_raw}"),
-            "titulo": str(titulo)[:200],
-            "link": str(link) if link else url,
+            "id": sha(f"{nome_fonte}-{id_raw}"),
+            "titulo": titulo[:200],
+            "link": str(link),
             "resumo": resumo,
-            "data": str(data_pub),
-            "fonte": fonte.get("nome", url)
+            "data": str(data_pub)[:19],
+            "fonte": nome_fonte
         })
     return itens
 
+def fetch_api_json(fonte):
+    nome = fonte.get("nome", "sem nome")
+    campos = fonte.get("campos", {})
+    url_template = fonte["url"]
+    variacoes = fonte.get("variacoes", [None])  # ex.: modalidades do PNCP
+
+    todos = []
+    for var in variacoes:
+        extra = {"{variacao}": var} if var is not None else None
+        url = aplicar_placeholders(url_template, extra)
+        try:
+            r = requests.get(url, timeout=40, headers={
+                "User-Agent": "acorda-sbo/1.0",
+                "Accept": "application/json"
+            })
+            if r.status_code == 204:
+                print(f"[OK-VAZIO] {nome} (var={var}): sem registros (204)")
+                continue
+            r.raise_for_status()
+            payload = r.json()
+        except Exception as e:
+            print(f"[FALHA] {nome} (var={var}): {e}")
+            print(f"         URL: {url}")
+            continue
+
+        registros = extract_list(payload)
+        print(f"[OK] {nome} (var={var}): {len(registros)} registros brutos")
+        if registros and len(todos) == 0:
+            print(f"     Exemplo de chaves disponíveis: {list(registros[0].keys())[:12]}")
+        todos.extend(montar_itens(registros, campos, nome, url))
+        time.sleep(1)
+
+    return todos
+
 def fetch_html_list(fonte):
-    url = fonte["url"]
+    nome = fonte.get("nome", "sem nome")
+    url = aplicar_placeholders(fonte["url"])
     selector = fonte["selector"]
     base = fonte.get("base", "")
     try:
-        r = requests.get(url, timeout=30, headers={"User-Agent": "acorda-sbo/1.0"})
+        r = requests.get(url, timeout=40, headers={"User-Agent": "acorda-sbo/1.0"})
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
     except Exception as e:
-        print(f"[HTML] Falha em {fonte.get('nome')}: {e}")
+        print(f"[FALHA] {nome}: {e}")
         return []
 
     out = []
+    vistos = set()
     for a in soup.select(selector):
         titulo = a.get_text(" ", strip=True)
         href = a.get("href") or ""
+        if not titulo or len(titulo) < 4:
+            continue
         if base and href.startswith("/"):
             href = base.rstrip("/") + href
+        chave = href or titulo
+        if chave in vistos:
+            continue
+        vistos.add(chave)
         out.append({
-            "id": sha(href or (titulo + url)),
-            "titulo": titulo or "Item",
+            "id": sha(f"{nome}-{chave}"),
+            "titulo": titulo[:200],
             "link": href or url,
             "resumo": "",
-            "data": datetime.now(TZ).strftime("%Y-%m-%d %H:%M"),
-            "fonte": fonte.get("nome", url)
+            "data": agora().strftime("%Y-%m-%d %H:%M"),
+            "fonte": nome
         })
+    print(f"[OK] {nome}: {len(out)} itens coletados")
     return out
 
 def main():
@@ -113,33 +171,36 @@ def main():
     store = load_json(NOV, {"ultima_atualizacao": "", "itens": []})
     known = {it["id"] for it in store.get("itens", [])}
 
-    new_items = []
+    print("=" * 60)
+    print(f"COLETA INICIADA — {now_str()}")
+    print("=" * 60)
+
+    novos = []
 
     for fonte in cfg.get("api_json", []):
         for it in fetch_api_json(fonte):
             if it["id"] not in known:
-                new_items.append(it)
-        time.sleep(1)
+                novos.append(it)
+                known.add(it["id"])
 
     for fonte in cfg.get("html", []):
         for it in fetch_html_list(fonte):
             if it["id"] not in known:
-                new_items.append(it)
+                novos.append(it)
+                known.add(it["id"])
         time.sleep(1)
 
-    if not new_items:
-        print("Sem novos itens hoje.")
-        store["ultima_atualizacao"] = now_str()
-        save_json(NOV, store)
-        return
+    print("=" * 60)
+    print(f"RESULTADO: {len(novos)} itens novos")
+    print("=" * 60)
 
-    all_items = new_items + store.get("itens", [])
-    all_items = sorted(all_items, key=lambda x: x.get("data", ""), reverse=True)[:500]
+    if novos:
+        todos = novos + store.get("itens", [])
+        todos = sorted(todos, key=lambda x: x.get("data", ""), reverse=True)[:500]
+        store["itens"] = todos
 
-    store["itens"] = all_items
     store["ultima_atualizacao"] = now_str()
     save_json(NOV, store)
-    print(f"Adicionados {len(new_items)} novos itens.")
 
 if __name__ == "__main__":
     main()
