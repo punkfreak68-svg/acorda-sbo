@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ACORDA SBO! — Fiscalização cidadã de Santa Bárbara d’Oeste</title>
+  <meta name="description" content="Gastos públicos de Santa Bárbara d’Oeste com dados, documentos e explicações em linguagem simples." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <a class="brand" href="./">ACORDA SBO!</a>
+    <nav>
+      <a href="casos.html">Casos</a>
+      <a href="metodologia.html">Metodologia</a>
+      <a href="lai.html">LAI</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>ACORDA SBO!</h1>
+    <p>Fiscalização cidadã do gasto público em Santa Bárbara d’Oeste. Fatos, documentos e contexto — sem sensacionalismo.</p>
+  </section>
+
+  <section>
+    <h2>Casos verificados (destaques)</h2>
+    <div id="casos-destaque" class="cards"></div>
+    <p><a class="btn" href="casos.html">Ver todos os casos</a></p>
+  </section>
+
+  <section>
+    <h2>Novidades automáticas (aguardando revisão)</h2>
+    <p class="muted">Itens coletados diariamente de fontes públicas. Podem conter ruídos. Só viram “Caso” após checagem.</p>
+    <ul id="lista-novidades" class="list"></ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© ACORDA SBO! • Conteúdo sob verificação contínua • Última atualização automática: <span id="ultima-atualizacao"></span></small>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script>
+  renderCasosDestaque();
+  renderNovidades();
+</script>
+</body>
+</html>

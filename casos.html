@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Casos — ACORDA SBO!</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <a class="brand" href="./">ACORDA SBO!</a>
+    <nav>
+      <a class="active" href="casos.html">Casos</a>
+      <a href="metodologia.html">Metodologia</a>
+      <a href="lai.html">LAI</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Casos verificados</h1>
+  <div class="filters">
+    <input id="busca" type="search" placeholder="Buscar por termo, órgão, fornecedor..." />
+    <select id="filtro-situacao">
+      <option value="">Situação (todas)</option>
+      <option value="em_apuracao">Em apuração</option>
+      <option value="confirmado">Confirmado</option>
+      <option value="arquivado">Arquivado</option>
+    </select>
+    <select id="filtro-ano">
+      <option value="">Ano (todos)</option>
+      <option>2026</option><option>2025</option><option>2024</option><option>2023</option>
+    </select>
+  </div>
+  <div id="lista-casos" class="cards"></div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>Política editorial: trabalhamos apenas com documentos públicos e damos direito de resposta. Veja Metodologia.</small>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script>
+  renderCasosLista();
+</script>
+</body>
+</html>
