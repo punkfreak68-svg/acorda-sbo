@@ -1,0 +1,145 @@
+import json, hashlib, os, time
+from datetime import datetime, timedelta, timezone
+import requests
+from bs4 import BeautifulSoup
+import yaml
+
+ROOT = os.path.dirname(os.path.dirname(__file__))
+NOV = os.path.join(ROOT, "data", "novidades.json")
+SRC = os.path.join(os.path.dirname(__file__), "sources.yaml")
+TZ = timezone(timedelta(hours=-3))
+
+def now_str():
+    return datetime.now(TZ).strftime("%Y-%m-%d %H:%M")
+
+def load_json(path, default):
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+def sha(s):
+    return hashlib.sha256(str(s).encode("utf-8")).hexdigest()[:16]
+
+def get_field(obj, path, default=""):
+    if not path:
+        return default
+    cur = obj
+    for part in path.split("."):
+        if isinstance(cur, dict) and part in cur:
+            cur = cur[part]
+        else:
+            return default
+    return cur
+
+def extract_list(payload):
+    if isinstance(payload, list):
+        return payload
+    if isinstance(payload, dict):
+        for key in ["data", "itens", "registros", "results", "content"]:
+            if key in payload and isinstance(payload[key], list):
+                return payload[key]
+    return []
+
+def fetch_api_json(fonte):
+    url = fonte["url"]
+    if "{mes}" in url:
+        mes_atual = datetime.now(TZ).month
+        url = url.replace("{mes}", str(mes_atual))
+
+    try:
+        r = requests.get(url, timeout=30, headers={"User-Agent": "acorda-sbo/1.0"})
+        r.raise_for_status()
+        payload = r.json()
+    except Exception as e:
+        print(f"[API-JSON] Falha em {fonte.get('nome')}: {e}")
+        return []
+
+    registros = extract_list(payload)
+    campos = fonte.get("campos", {})
+    itens = []
+    for reg in registros:
+        titulo = get_field(reg, campos.get("titulo"), "Sem título")
+        data_pub = get_field(reg, campos.get("data"), "")
+        link = get_field(reg, campos.get("link"), url)
+        valor = get_field(reg, campos.get("valor"), "")
+        id_raw = get_field(reg, campos.get("id"), titulo)
+
+        resumo = f"Valor: {valor}" if valor else ""
+        itens.append({
+            "id": sha(f"{fonte.get('nome')}-{id_raw}"),
+            "titulo": str(titulo)[:200],
+            "link": str(link) if link else url,
+            "resumo": resumo,
+            "data": str(data_pub),
+            "fonte": fonte.get("nome", url)
+        })
+    return itens
+
+def fetch_html_list(fonte):
+    url = fonte["url"]
+    selector = fonte["selector"]
+    base = fonte.get("base", "")
+    try:
+        r = requests.get(url, timeout=30, headers={"User-Agent": "acorda-sbo/1.0"})
+        r.raise_for_status()
+        soup = BeautifulSoup(r.text, "html.parser")
+    except Exception as e:
+        print(f"[HTML] Falha em {fonte.get('nome')}: {e}")
+        return []
+
+    out = []
+    for a in soup.select(selector):
+        titulo = a.get_text(" ", strip=True)
+        href = a.get("href") or ""
+        if base and href.startswith("/"):
+            href = base.rstrip("/") + href
+        out.append({
+            "id": sha(href or (titulo + url)),
+            "titulo": titulo or "Item",
+            "link": href or url,
+            "resumo": "",
+            "data": datetime.now(TZ).strftime("%Y-%m-%d %H:%M"),
+            "fonte": fonte.get("nome", url)
+        })
+    return out
+
+def main():
+    cfg = yaml.safe_load(open(SRC, "r", encoding="utf-8"))
+    store = load_json(NOV, {"ultima_atualizacao": "", "itens": []})
+    known = {it["id"] for it in store.get("itens", [])}
+
+    new_items = []
+
+    for fonte in cfg.get("api_json", []):
+        for it in fetch_api_json(fonte):
+            if it["id"] not in known:
+                new_items.append(it)
+        time.sleep(1)
+
+    for fonte in cfg.get("html", []):
+        for it in fetch_html_list(fonte):
+            if it["id"] not in known:
+                new_items.append(it)
+        time.sleep(1)
+
+    if not new_items:
+        print("Sem novos itens hoje.")
+        store["ultima_atualizacao"] = now_str()
+        save_json(NOV, store)
+        return
+
+    all_items = new_items + store.get("itens", [])
+    all_items = sorted(all_items, key=lambda x: x.get("data", ""), reverse=True)[:500]
+
+    store["itens"] = all_items
+    store["ultima_atualizacao"] = now_str()
+    save_json(NOV, store)
+    print(f"Adicionados {len(new_items)} novos itens.")
+
+if __name__ == "__main__":
+    main()

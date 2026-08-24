@@ -1,0 +1,38 @@
+{
+  "casos": [
+    {
+      "titulo": "PREENCHER — Ex.: Aditivos em série no contrato de limpeza",
+      "resumo": "PREENCHER — Resumo curto e factual do que está sendo apurado/confirmado.",
+      "orgao": "PREENCHER — Secretaria/Órgão",
+      "tipo": "licitação/contrato/aditivo/diárias/outros",
+      "valor_total": 0,
+      "ano": 2025,
+      "fornecedores": ["PREENCHER — Razão Social (CNPJ)"],
+      "situacao": "em_apuracao",
+      "documentos": [
+        {"descricao": "PREENCHER — Contrato nº X", "link": "URL_DO_DOCUMENTO"}
+      ],
+      "fontes": [
+        {"titulo": "PREENCHER — Extrato no Diário Oficial", "link": "URL", "data_acesso": "2026-08-24"}
+      ],
+      "responsavel": "ACORDA SBO!",
+      "ultima_atualizacao": "2026-08-24",
+      "link": "#"
+    },
+    {
+      "titulo": "PREENCHER — Ex.: Diárias acima da média",
+      "resumo": "PREENCHER — Contexto e dados essenciais.",
+      "orgao": "PREENCHER — Câmara/Secretaria",
+      "tipo": "diárias",
+      "valor_total": 0,
+      "ano": 2024,
+      "fornecedores": [],
+      "situacao": "em_apuracao",
+      "documentos": [],
+      "fontes": [],
+      "responsavel": "ACORDA SBO!",
+      "ultima_atualizacao": "2026-08-24",
+      "link": "#"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+api_json:
+  - nome: "PNCP (Licitações Diárias)"
+    url: "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?codigoMunicipioIbge=3545803&pagina=1"
+    campos:
+      id: "numeroControlePNCP"
+      titulo: "objeto"
+      data: "dataPublicacaoPncp"
+      link: "linkSistemaOrigem"
+
+  - nome: "Diário Oficial de SBO"
+    url: "https://www.santabarbara.sp.gov.br/portal/dados-abertos/diario-oficial/2026"
+    campos:
+      id: "edicao"
+      titulo: "descricao"
+       "nr_empenho"
+      titulo: "nm_fornecedor"
+      data: "dt_emissao_despesa"
+      valor: "vl_despesa"
+
+html:
+  - nome: "Câmara de SBO (Sessões)"
+    url: "https://santabarbara.siscam.com.br/sessoes"
+    selector: ".table-responsive table tbody tr a"
+    base: "https://santabarbara.siscam.com.br"
