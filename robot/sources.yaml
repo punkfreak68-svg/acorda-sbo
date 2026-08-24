@@ -24,7 +24,7 @@ api_json:
       data: "data"
 
   - nome: "TCE-SP (Despesas)"
-    url: "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/{ano}/{mes}"
+    url: "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/{anoMesAnterior}/{mesAnterior}"
     campos:
       id: "nr_empenho"
       titulo: "nm_fornecedor"
