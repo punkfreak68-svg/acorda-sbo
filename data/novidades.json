@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-28 18:12",
+  "ultima_atualizacao": "2026-08-29 12:09",
   "itens": [
     {
       "id": "fd1eaab60ffd85ae",
@@ -3562,6 +3562,278 @@
       "fonte": "TCE-SP (Despesas)"
     },
     {
+      "id": "c6884683ceff423c",
+      "titulo": "UNIMED DE SANTA BARBARA DOESTE AMERICANA COOP TRAB MED",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 116922,30",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "6f727190c5d9a0c6",
+      "titulo": "INSS   INSTITUTO NACIONAL DE SEGURO SOCIAL",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 1424,72",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "1d02b4e1811c3932",
+      "titulo": "D  P  QUARTAROLO GERENCIAMENTO DE FROTAS EIRELI",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 1371,39",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "78b89c9a0f888730",
+      "titulo": "48 909 070 LEONARDO DOS SANTOS BEZERRA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 1260,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "e937d6424e064e3a",
+      "titulo": "BRAZIMED EQUIPAMENTOS MEDICOS HOSPITALARES LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 8400,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "f2589f33b10ba070",
+      "titulo": "TITANIUM IMPORTACAO E DISTRIBUICAO LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 8900,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "5927e095d0d6f01a",
+      "titulo": "CAIXA ECONOMICA FEDERAL",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 477,82",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "b3e74af2957b24e5",
+      "titulo": "RODRIGO FRACAROLE DE SOUZA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 7549,99",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "9c3957d7ee3dd0b6",
+      "titulo": "D  P  QUARTAROLO GERENCIAMENTO DE FROTAS EIRELI",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 2000,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "93fe7b16698b5213",
+      "titulo": "51 682 993 VICTORIA JANDIRA DE OLIVEIRA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 7560,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "42686e29e1961247",
+      "titulo": "CARLOS ALBERTO SAQUETTO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 2535,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "d6ab40ee6595e182",
+      "titulo": "DAE DEPARTAMENTO DE AGUA E ESGOTO DE SBO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 2022,97",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "18c1ede86f0e98b1",
+      "titulo": "DAE DEPARTAMENTO DE AGUA E ESGOTO DE SBO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 69,49",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "dfa08ed3d0e3dc4d",
+      "titulo": "TIMEH PRODUTOS HOSPITALARES LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 8152,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "c7b008faf69c0e4e",
+      "titulo": "ANTIBIOTICOS DO BRASIL LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 4224,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "ed94459f84311d01",
+      "titulo": "NEUSA APARECIDA BETTINI GRIVOL",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 461,57",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "c4f5fd723f6223e9",
+      "titulo": "SEBASTIAO JOSE GRIVOL",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 461,57",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "4d316a596501c9a9",
+      "titulo": "MARCELO LAUER",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 1918,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "3373ed877f6c219d",
+      "titulo": "CLAUDINEI ANTONIO DO PRADO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 2921,51",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "64a212430d1d3077",
+      "titulo": "CLOVIS LAUDISSI",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 5258,57",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "f136b2d4642687de",
+      "titulo": "EDSON OSMAIR ROSADA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 2356,86",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "440c7b804f5220e9",
+      "titulo": "EVANI DONATO MORENO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 3151,77",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "1e8041564f123457",
+      "titulo": "SINDICATO DOS TRABALHADORES NAS INDUSTRIAS METALURGICAS MECANICAS E DE MATERIAL ELETRICO DE SANTA BA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 7815,61",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "10e86bedd6378b79",
+      "titulo": "FORNAZARI ADMINISTRACAO E PARTICIPACAO EIRELI",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 5633,42",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "5f6cc4cb942be1fe",
+      "titulo": "GILDEMAR FRAGA CARDOSO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 3025,18",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "f02b2c2a19c5042d",
+      "titulo": "CONSELHO CENTRAL DE PIRACICABA DA SOCDE SAO VICENTE DE PAULO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 3473,72",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "d736ec1aec231cde",
+      "titulo": "EXXMED MEDICINA OCUPACIONAL EIRELI",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 38374,43",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "5317d5fd25e424b7",
+      "titulo": "SZ EMPREENDIMENTOS E SERVICOS DE URBANIZACAO LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 14823,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "0333c15a3c82a1ae",
+      "titulo": "CONSELHO CENTRAL DE PIRACICABA DA SOCDE SAO VICENTE DE PAULO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 2696,78",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "ab571123b1934745",
+      "titulo": "HIDROSANU SOLUCOES PARA CONST  E SANEAMENTO LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 2806,00",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "7c270e30db20bfd9",
+      "titulo": "TERRAMERICATEC REFRIGERACAO E COMERCIO DE PECAS E SERVICOS LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 42,08",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "95ce2fdebbe342db",
+      "titulo": "TERRAMERICATEC REFRIGERACAO E COMERCIO DE PECAS E SERVICOS LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 520,72",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "d3a946bde995a26c",
+      "titulo": "WR SAO JORGE CENTRO AUTOMOTIVO LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 3123,78",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "2e27c9fe952c02f4",
+      "titulo": "SUPERMERCADO P J D SILVA LTDA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
+      "resumo": "Valor: 10398,04",
+      "data": "28/07/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
       "id": "41c493fe1bde9264",
       "titulo": "SUPERMERCADO P J D SILVA LTDA",
       "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
@@ -3726,278 +3998,6 @@
       "titulo": "55 910 724 VIVIAN HELENA IGNACIO",
       "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
       "resumo": "Valor: 5600,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "7b230ce445b054ad",
-      "titulo": "BIOMEGA MEDICINA DIAGNOSTICA LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 24672,10",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "5497e7a1c2b6dd47",
-      "titulo": "SUPERMERCADO P J D SILVA LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 7799,60",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "e7525443090b4259",
-      "titulo": "TERRAMERICATEC REFRIGERACAO E COMERCIO DE PECAS E SERVICOS LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 1967,15",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "5204d206ca0f2662",
-      "titulo": "TERRAMERICATEC REFRIGERACAO E COMERCIO DE PECAS E SERVICOS LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 1735,70",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "22fce0ad74d33a83",
-      "titulo": "WR SAO JORGE CENTRO AUTOMOTIVO LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 2207,55",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "f4f42948a1e5651a",
-      "titulo": "TROCHMANN   GREGOLIN LTDA   EPP",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 76,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "a8f540d013de3f00",
-      "titulo": "SUPERFOOD ALIMENTOS LTDA EPP",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 181,80",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "cc41e99975d1a233",
-      "titulo": "SUPERMERCADO P J D SILVA LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 1185,92",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "370aedca0a53bb61",
-      "titulo": "TERRAMERICATEC REFRIGERACAO E COMERCIO DE PECAS E SERVICOS LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 578,56",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "2858b7572e714615",
-      "titulo": "SUPERMERCADO P J D SILVA LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 471,75",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "8aaf09c7ef817600",
-      "titulo": "TERRAMERICATEC REFRIGERACAO E COMERCIO DE PECAS E SERVICOS LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 2945,44",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "67fac07f77622776",
-      "titulo": "ICOCITAL ARTEFATOS DE CONCRETOS LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 23243,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "b7c68ab5c057d8e6",
-      "titulo": "TROCHMANN   GREGOLIN LTDA   EPP",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 346,50",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "3aa884032b303c32",
-      "titulo": "LACIER JOSE DE REZENDE LIVRARIA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 1442,88",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "7703eeaa02d79852",
-      "titulo": "JOB SAFETY COMERCIAL LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 142,62",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "beab4dbebde3f6a5",
-      "titulo": "RENAN GREGO MAXIMO SOCIEDADE INDIVIDUAL DE ADVOCACIA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 1233,80",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "b5d9cd81a5f20480",
-      "titulo": "D  P  QUARTAROLO GERENCIAMENTO DE FROTAS EIRELI",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 1904,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "81cbc9e62d6b6731",
-      "titulo": "CAMARA MUNICIPAL DE SANTA BARBARA D OESTE",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 3523,16",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "95d21a9868602dda",
-      "titulo": "TRIBUNAL REGIONAL DO TRABALHO DA 15A  REGIAO",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 3630,91",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "75ad2185b31a0ddb",
-      "titulo": "D  P  QUARTAROLO GERENCIAMENTO DE FROTAS EIRELI",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 300,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "3a888a620c5537a5",
-      "titulo": "62 614 606 EMERI APARECIDA DE AVELINO RODRIGUES",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 5600,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "921c18ef9e802fc8",
-      "titulo": "ARLIMED DISTRIBUIDORA HOSPITALAR LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 4800,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "062ea8aab2a5c62c",
-      "titulo": "53 833 433 IVO ANTONIO MAZZEI NETO",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 6400,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "83d3e2d68bf8d5f6",
-      "titulo": "YOLANDO THEODORO DE OLIVEIRA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 3765,97",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "103a9ee48fbc7e90",
-      "titulo": "STORE DO BRASIL LTDA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 7446,60",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "3d552ba4fc20b602",
-      "titulo": "SAO PAULO TRIBUNAL DE JUSTICA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 6353,15",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "6f2057b8dc36c128",
-      "titulo": "RODRIGO FRACAROLE DE SOUZA",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 1681,08",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "7758ce6f75902b05",
-      "titulo": "TRIBUNAL REGIONAL DO TRABALHO DA 15A  REGIAO",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 7505,41",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "e6243266a3b8c65a",
-      "titulo": "INSTITUTO CROAD DE SAUDE MENTAL",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 36750,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "905196dfab9ddf10",
-      "titulo": "ATANAEL DOS SANTOS MOTA JUNIOR",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 2880,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "6fb2106bcce75cc0",
-      "titulo": "CAMARA MUNICIPAL DE SANTA BARBARA D OESTE",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 7607,30",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "50d01d6b161db3d8",
-      "titulo": "CAIXA ECONOMICA FEDERAL",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 245,90",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "546ea57667ba1101",
-      "titulo": "D  P  QUARTAROLO GERENCIAMENTO DE FROTAS EIRELI",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 322,00",
-      "data": "28/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "bfac7b7f1a6b30a9",
-      "titulo": "39 417 737 TANIA DOS SANTOS AMIANTI",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 7200,00",
       "data": "28/07/2026",
       "fonte": "TCE-SP (Despesas)"
     }
