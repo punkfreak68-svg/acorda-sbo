@@ -1,6 +1,54 @@
 {
-  "ultima_atualizacao": "2026-09-24 12:09",
+  "ultima_atualizacao": "2026-09-25 12:35",
   "itens": [
+    {
+      "id": "d7f8d16abf90a4d8",
+      "titulo": "DAE DEPARTAMENTO DE AGUA E ESGOTO DE SBO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/8",
+      "resumo": "Valor: 422959,82",
+      "data": "31/08/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "214c7a4cd1c5c799",
+      "titulo": "ALESSANDRO MASINI",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/8",
+      "resumo": "Valor: 1500,00",
+      "data": "31/08/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "24605f6381e08c58",
+      "titulo": "DAE DEPARTAMENTO DE AGUA E ESGOTO DE SBO",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/8",
+      "resumo": "Valor: 27631,10",
+      "data": "31/08/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "01e937543a537ea4",
+      "titulo": "LUCIANA RODRIGUES DA SILVA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/8",
+      "resumo": "Valor: 12157,50",
+      "data": "31/08/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "e46e36a6d47eb219",
+      "titulo": "JANAINA ZUCCOLO VOLPONI",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/8",
+      "resumo": "Valor: 12157,50",
+      "data": "31/08/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
+    {
+      "id": "aac5ebd5dcbef470",
+      "titulo": "EDSON OSMAIR ROSADA",
+      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/8",
+      "resumo": "Valor: 2448,93",
+      "data": "31/08/2026",
+      "fonte": "TCE-SP (Despesas)"
+    },
     {
       "id": "ee4e9b8c1f5ca22b",
       "titulo": "PREFEITURA MUNICIPAL DE SANTA BARBARA D OESTE",
@@ -3950,54 +3998,6 @@
       "titulo": "JOSE MAURICIO DA SILVA LAVORENTI   ME",
       "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
       "resumo": "Valor: 3075,27",
-      "data": "31/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "3a529a05928ebb10",
-      "titulo": "TELEFONICA BRASIL S A",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 635,71",
-      "data": "31/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "91ff492c4d06ebf0",
-      "titulo": "DAE DEPARTAMENTO DE AGUA E ESGOTO DE SBO",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 18655,14",
-      "data": "31/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "11b32c763867ab0a",
-      "titulo": "DAE DEPARTAMENTO DE AGUA E ESGOTO DE SBO",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 3076,28",
-      "data": "31/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "f79c5e41f521fe7d",
-      "titulo": "DAE DEPARTAMENTO DE AGUA E ESGOTO DE SBO",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 31558,45",
-      "data": "31/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "c576ce54340b5fb8",
-      "titulo": "AGENCIA METROPOLITANA DE CAMPINAS   AGEMCAMP",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 24303,02",
-      "data": "31/07/2026",
-      "fonte": "TCE-SP (Despesas)"
-    },
-    {
-      "id": "3b97778fc878a2e6",
-      "titulo": "ELENIRA JOANA PADOVESI DE CARVALHO",
-      "link": "https://transparencia.tce.sp.gov.br/api/json/despesas/santa-barbara-d-oeste/2026/7",
-      "resumo": "Valor: 9896,74",
       "data": "31/07/2026",
       "fonte": "TCE-SP (Despesas)"
     }
